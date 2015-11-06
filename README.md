@@ -14,7 +14,7 @@ overdone for its incredibly niche purpose, but I had fun with it. Hopefully it w
 * The configured number of gifts per person is the same for ALL recipients
 * The configured number of gifts per person is less than the number of possible Secret Santas for an
 individual (number of Secret Santas - 1)
-* The input CSV file is of the format "PersonName,FamilyName,PersonType"
+* 
 * A "Santa" represents one gift-giving entity. I could have created separate person rows for each member
 of a couple, but decided that would be a data modeling headache that was well beyond the scope of what
 we're trying to accomplish here.
@@ -25,6 +25,23 @@ for this madness.
 * The script requires you to pass in the path to the CSV and the number of gifts per recipient as
 arguments. It doesn't really sanity check here, so just don't be a butt about it and be sure to specify.
 
+##CSV Conventions
+For the CSV input, note that the structure is:
+
+`Person Name,Family Name,Person Type`
+
+Person Type can be Santa, Santee, or Exempt. I added Exempt as a sort of halfhearted way of documenting
+that someone should be kept track of, but shouldn't be included in the drawing in any way since they're
+probably babies and are going to get presents from everyone regardless.
+
+Santas are potential present givers; Santees are potential gift recipients; and Exempt people are not
+included at all.
+
+##Usage
+Once you include all of the modules in your Python environment, running this is pretty straightforward.
+
+`python santascript.py path_to_csv.csv 2`
+
 ##Afterthoughts
 In most Secret Santa scenarios, all of the Santas are actually eligible to receive gifts. That isn't
 the case here, but it should be relatively easy to change the data model around to allow for that.
@@ -33,6 +50,3 @@ Alternatively, you could just add extra rows in the CSV for those people to be r
 
 This is a pretty heavy-handed way of approaching a shuffling problem, mostly because of the arbitrary
 constraints I added around relatives and duplicity. Oh well, at least it was fun to write!
-
-
-
