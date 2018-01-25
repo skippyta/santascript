@@ -1,6 +1,6 @@
-#Ta Family SantaScript
+# Ta Family SantaScript
 
-##About
+## About
 This script was originally written back in 2013 with the intent of simplifying my family's annual
 Secret Santa drawing process. We used to use an actual hat and paper, which was occasionally prone
 to error, so I decided to set the process in stone as a piece of code. Frankly, this code isn't very
@@ -10,7 +10,7 @@ general, and now its structure generally served as a way of familiarizing myself
 Really, this is kind of my "EnterpriseFizzBuzz" submission for Secret Santa drawings. It's really
 overdone for its incredibly niche purpose, but I had fun with it. Hopefully it won't age horribly.
 
-##Assumptions and Constraints
+## Assumptions and Constraints
 * The configured number of gifts per person is the same for ALL recipients
 * The configured number of gifts per person is less than the number of possible Secret Santas for an
 individual (number of Secret Santas - 1)
@@ -25,7 +25,7 @@ for this madness.
 * The script requires you to pass in the path to the CSV and the number of gifts per recipient as
 arguments. It doesn't really sanity check here, so just don't be a butt about it and be sure to specify.
 
-##CSV Conventions
+## CSV Conventions
 For the CSV input, note that the structure is:
 
 `Person Name,Family Name,Person Type`
@@ -37,12 +37,12 @@ probably babies and are going to get presents from everyone regardless.
 Santas are potential present givers; Santees are potential gift recipients; and Exempt people are not
 included at all.
 
-##Usage
+## Usage
 Once you include all of the modules in your Python environment, running this is pretty straightforward.
 
 `python santascript.py path_to_csv.csv 2`
 
-##Afterthoughts
+## Afterthoughts
 In most Secret Santa scenarios, all of the Santas are actually eligible to receive gifts. That isn't
 the case here, but it should be relatively easy to change the data model around to allow for that.
 Alternatively, you could just add extra rows in the CSV for those people to be represented as recipients
